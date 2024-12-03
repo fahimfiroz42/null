@@ -1,6 +1,15 @@
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthPovider/AuthPovider";
+import { useContext } from "react";
 
 const Navbar = () => {
+
+  const{user,signOutUser,setLoading}=useContext(AuthContext)
+  const handleLogout=()=>{
+    signOutUser()
+    setLoading(false)
+  }
+
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -44,9 +53,18 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end space-x-2">
-    <Link to={'/login'} className="btn rounded-3xl bg-transparent border-primary border-2 shadow-md text-base font-bold">Login</Link>
+  <div className="tooltip  tooltip-bottom" data-tip={user?.displayName}>
+      {
+        user?.email && <img src={user?.photoURL} alt="" className="w-10 h-10 rounded-full" />
+      }
+      
+      
+    </div>
+    
+    {
+      user?.email ?<button onClick={handleLogout} className="btn bg-primary text-md font-bold rounded-full"> Logout</button>:<Link to={'/login'} className="btn  bg-primary text-md font-bold rounded-full">Login</Link>
+    }
 
-    {/* toogle dark mode button */}
     <label className="swap swap-rotate border rounded-full border-primary ">
   {/* this hidden checkbox controls the state */}
   <input type="checkbox" />
