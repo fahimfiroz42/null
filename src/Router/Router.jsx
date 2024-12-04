@@ -10,6 +10,7 @@ import Register from "../Pages/Register";
 import Login from "../Pages/Login";
 import AddItemForm from "../Pages/AddProduct";
 import AllSportsEquipment from "../Pages/AllProduct";
+import ViewDetails from "../Pages/ViewDetails";
 
 
 const Router = createBrowserRouter([
@@ -20,7 +21,8 @@ const Router = createBrowserRouter([
       children: [
         {
           path: "/",
-          element:<Home/>
+          element:<Home/>,
+          loader:()=>fetch('http://localhost:5000/addProduct')
         },
         {
           path: "/register",
@@ -38,6 +40,11 @@ const Router = createBrowserRouter([
         {
           path:'/addproduct',
           element:<AddItemForm />
+        },
+        {
+          path:'/product/:id',
+          element:<ViewDetails />,
+          loader:
         }
       ]
     },
