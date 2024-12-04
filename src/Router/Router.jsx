@@ -11,6 +11,8 @@ import Login from "../Pages/Login";
 import AddItemForm from "../Pages/AddProduct";
 import AllSportsEquipment from "../Pages/AllProduct";
 import ViewDetails from "../Pages/ViewDetails";
+import MyProduct from "../Pages/MyProduct";
+import UpdateProduct from "../Pages/UpdateProduct";
 
 
 const Router = createBrowserRouter([
@@ -45,6 +47,17 @@ const Router = createBrowserRouter([
         {
           path:'/product/:id',
           element:<ViewDetails />,
+          loader:({params})=>fetch(`http://localhost:5000/addProduct/${params.id}`)
+        },
+        {
+          path:'/myProduct/:email',
+          element:<MyProduct />,
+          loader:({params})=>fetch(`http://localhost:5000/userProduct/${params.email}`)
+
+        },
+        {
+          path:'/updateProduct/:id',
+          element:<UpdateProduct />,
           loader:({params})=>fetch(`http://localhost:5000/addProduct/${params.id}`)
         }
       ]

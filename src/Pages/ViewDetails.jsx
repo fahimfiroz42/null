@@ -21,7 +21,7 @@ const ViewDetails = () => {
         <h1 className="text-2xl font-bold text-gray-800">{itemName}</h1>
         <p className="text-lg text-gray-600">Category: {categoryName}</p>
         <p className="text-xl font-semibold text-primary mt-2">
-          ${price.toFixed(2)}
+          ${price}
         </p>
 
         {/* Stock Status */}

@@ -1,8 +1,11 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthPovider/AuthPovider";
 import Swal from "sweetalert2";
+import { useLoaderData } from "react-router-dom";
 
-const AddItemForm = () => {
+const UpdateProduct = () => {
+    const data=useLoaderData()
+    const { image, itemName, categoryName, price, rating, description, customization, processingTime, stockStatus } =data || {};
 
 
     const {user}=useContext(AuthContext)
@@ -11,15 +14,15 @@ const AddItemForm = () => {
 
 
   const [formData, setFormData] = useState({
-    image: "",
-    itemName: "",
-    categoryName: "",
-    description: "",
-    price: "",
-    rating: "",
-    customization: "",
-    processingTime: "",
-    stockStatus: "",
+    image: image,
+    itemName:itemName,
+    categoryName:categoryName,
+    description: description,
+    price: price,
+    rating: rating,
+    customization:customization ,
+    processingTime:processingTime,
+    stockStatus:stockStatus,
     displayName:displayName,
     email:email,
     uid:uid
@@ -35,21 +38,22 @@ const AddItemForm = () => {
     e.preventDefault();
   
 
-    fetch("http://localhost:5000/addProduct", {
-        method:"POST",
-        headers: {
-            "content-type":"application/json"
-        },
-        body:JSON.stringify(formData)
-        
-    })
-    .then(res=>res.json())  
-    .then(data=>{
-        if(data.insertedId){Swal.fire("Item added successfully")}
-    })
+   //update data functionality
+   fetch(`http://localhost:5000/addProduct/${data._id}`, {
+       method:"PATCH",
+       headers: {
+           "content-type":"application/json"
+       },
+       body:JSON.stringify(formData)
+       
+   })
+   .then(res=>res.json())  
+   .then(data=>{if(data.modifiedCount){Swal.fire("Item updated successfully")}})
 
    
-    // Add logic to submit form data to your database
+
+   
+
   };
 
   return (
@@ -217,4 +221,4 @@ const AddItemForm = () => {
   );
 };
 
-export default AddItemForm;
+export default UpdateProduct;

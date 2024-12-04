@@ -1,8 +1,54 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
-const Card = ({product}) => {
+
+const  UserProductCard = ({product}) => {
+    
     const {_id,image,itemName,stockStatus,price}=product
+
+
+    const handleDelete=(id)=>{
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              
+
+            fetch(`http://localhost:5000/addProduct/${id}`,{
+                method:"DELETE"
+            })
+            .then(res=>res.json())
+            .then(data=>{if(data.deletedCount>0){
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                  });
+            }})
+            }
+          });
+
+
+
+
+
+        
+
+    }
+
+
+
+
+
+
   return (
     <div className="bg-white rounded-3xl shadow-lg p-4 ">
       {/* Image Section */}
@@ -65,13 +111,25 @@ const Card = ({product}) => {
 
         </div>
         {/* View Details Button */}
-       <Link to={`/product/${_id}`}><button className="mt-4 w-full bg-primary font-bold py-2 rounded-lg hover:bg-green-500 transition">
+       {/* <Link to={`/product/${_id}`}><button className="mt-4 w-full bg-primary font-bold py-2 rounded-lg hover:bg-green-500 transition">
           View Details
         </button>
+        </Link>  */}
+
+        <div className="flex justify-between ">
+        <Link to={`/updateProduct/${_id}`}><button className="mt-4 btn w-full bg-primary font-bold py-2 rounded-lg hover:bg-green-500 transition">
+          Update
+        </button>
         </Link> 
+
+        <Link to={`/update/${_id}`}><button onClick={() => handleDelete(_id)} className="mt-4 btn w-full bg-primary font-bold py-2 rounded-lg hover:bg-green-500 transition">
+          Delete
+        </button>
+        </Link> 
+        </div>
       </div>
     </div>
   );
 };
 
-export default Card;
+export default UserProductCard;
