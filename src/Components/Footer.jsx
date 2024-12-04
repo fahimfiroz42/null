@@ -71,7 +71,11 @@ const Footer = () => {
   </nav>
 </footer>
 
-
+<footer className="footer footer-center bg-secondary text-base-content p-4">
+  <aside>
+    <p>Copyright © {new Date().getFullYear()} - All right reserved by KNULLIndustries Ltd</p>
+  </aside>
+</footer>
             
         </div>
     );

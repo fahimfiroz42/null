@@ -8,6 +8,8 @@ import Home from "../Pages/Home";
 import Error from "../Pages/Error";
 import Register from "../Pages/Register";
 import Login from "../Pages/Login";
+import AddItemForm from "../Pages/AddProduct";
+import AllSportsEquipment from "../Pages/AllProduct";
 
 
 const Router = createBrowserRouter([
@@ -28,6 +30,14 @@ const Router = createBrowserRouter([
         {
           path: "/login",
           element:<Login />
+        },
+        {
+          path:'/allproduct',
+          element:<AllSportsEquipment />
+        },
+        {
+          path:'/addproduct',
+          element:<AddItemForm />
         }
       ]
     },
