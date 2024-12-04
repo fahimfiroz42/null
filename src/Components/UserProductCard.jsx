@@ -28,10 +28,10 @@ const  UserProductCard = ({product}) => {
             .then(res=>res.json())
             .then(data=>{if(data.deletedCount>0){
                 Swal.fire({
-                    title: "Deleted!",
-                    text: "Your file has been deleted.",
-                    icon: "success"
-                  });
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
             }})
             }
           });
@@ -122,7 +122,7 @@ const  UserProductCard = ({product}) => {
         </button>
         </Link> 
 
-        <Link to={`/update/${_id}`}><button onClick={() => handleDelete(_id)} className="mt-4 btn w-full bg-primary font-bold py-2 rounded-lg hover:bg-green-500 transition">
+        <Link ><button onClick={() => handleDelete(_id)} className="mt-4 btn w-full bg-primary font-bold py-2 rounded-lg hover:bg-green-500 transition">
           Delete
         </button>
         </Link> 

@@ -13,6 +13,7 @@ import AllSportsEquipment from "../Pages/AllProduct";
 import ViewDetails from "../Pages/ViewDetails";
 import MyProduct from "../Pages/MyProduct";
 import UpdateProduct from "../Pages/UpdateProduct";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 const Router = createBrowserRouter([
@@ -42,22 +43,22 @@ const Router = createBrowserRouter([
         },
         {
           path:'/addproduct',
-          element:<AddItemForm />
+          element:<PrivateRoute><AddItemForm /></PrivateRoute>
         },
         {
           path:'/product/:id',
-          element:<ViewDetails />,
+          element:<PrivateRoute><ViewDetails /></PrivateRoute>,
           loader:({params})=>fetch(`http://localhost:5000/addProduct/${params.id}`)
         },
         {
           path:'/myProduct/:email',
-          element:<MyProduct />,
+          element:<PrivateRoute><MyProduct /></PrivateRoute>,
           loader:({params})=>fetch(`http://localhost:5000/userProduct/${params.email}`)
 
         },
         {
           path:'/updateProduct/:id',
-          element:<UpdateProduct />,
+          element:<PrivateRoute><UpdateProduct /></PrivateRoute>,
           loader:({params})=>fetch(`http://localhost:5000/addProduct/${params.id}`)
         }
       ]
