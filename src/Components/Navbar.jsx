@@ -1,7 +1,12 @@
+
+import Mytheme from "./Mytheme";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthPovider/AuthPovider";
 import { useContext } from "react";
-import Mytheme from "./Mytheme";
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
+
+
 
 const Navbar = () => {
 
@@ -53,17 +58,22 @@ const Navbar = () => {
      
     </ul>
   </div>
-  <div className="navbar-end space-x-2 ">
-  <div className="tooltip  tooltip-bottom" data-tip={user?.displayName}>
+  <div className="navbar-end space-x-2 z-50 ">
+  <a  data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName} >
       {
         user?.email && <img src={user?.photoURL} alt="" className="w-10 h-10 rounded-full" />
       }
       
       
-    </div>
+    </a>
+    <Tooltip id="my-tooltip" />
     
     {
-      user?.email ?<button onClick={handleLogout} className="btn bg-primary text-md font-bold rounded-full"> Logout</button>:<Link to={'/login'} className="btn  bg-primary text-md font-bold rounded-full">Login</Link>
+      user?.email ?<button onClick={handleLogout} className="btn btn-sm bg-primary text-md font-bold rounded-full"> Logout</button>:<div className="join  ">
+        <Link to={'/login'} className="btn btn-sm join-item bg-primary text-md font-bold rounded-full">Login</Link> 
+        <Link to={'/register'} className="btn btn-sm join-item   bg-primary text-md font-bold rounded-full">Register</Link> 
+        
+      </div>
     }
 
   

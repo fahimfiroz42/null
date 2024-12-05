@@ -1,9 +1,12 @@
-import { Link, useLoaderData } from "react-router-dom";
+
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 
-const  UserProductCard = ({product}) => {
+
+const  UserProductCard = ({product,setItem,item}) => {
+ 
     
     const {_id,image,itemName,stockStatus,price}=product
 
@@ -32,11 +35,14 @@ const  UserProductCard = ({product}) => {
                 text: "Your file has been deleted.",
                 icon: "success"
               });
+              const remaining=item.filter(product=>product._id!==id)
+              setItem(remaining)
+
             }})
             }
           });
-
-
+            
+          
 
 
 
@@ -50,14 +56,17 @@ const  UserProductCard = ({product}) => {
 
 
   return (
-    <div className="bg-white rounded-3xl shadow-lg p-4 ">
+    <div className="bg-white rounded-3xl shadow-lg p-4  ">
       {/* Image Section */}
       <div className="relative">
-        <img
+        <div className="flex items-center justify-center">
+         <img
           src={image}
           alt="Riddell Speedflex Helmet"
-          className="w-full rounded-lg "
-        />
+          className="object-cover h-56 rounded-lg "
+        /> 
+        
+        </div>
         <button
           className="absolute top-2 right-2 bg-primary p-1 rounded-full shadow-md hover:bg-gray-200"
           aria-label="Add to Favorites"

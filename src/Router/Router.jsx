@@ -25,7 +25,7 @@ const Router = createBrowserRouter([
         {
           path: "/",
           element:<Home/>,
-          loader:()=>fetch('http://localhost:5000/addProduct')
+          loader:()=>fetch('http://localhost:5000/addProduct/limit')
         },
         {
           path: "/register",

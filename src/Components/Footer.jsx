@@ -2,8 +2,8 @@
 
 const Footer = () => {
     return (
-        <div className="bg-secondary">
-            <footer className="footer bg-secondary w-11/12 mx-auto  p-10">
+        <div className="bg-secondary dark:bg-slate-800">
+            <footer className="footer bg-secondary dark:bg-slate-800 w-11/12 mx-auto  p-10">
   <aside>
     
     <p className="font-semibold text-xl">
@@ -71,9 +71,9 @@ const Footer = () => {
   </nav>
 </footer>
 
-<footer className="footer footer-center bg-secondary text-base-content p-4">
+<footer className="footer footer-center bg-secondary dark:bg-slate-800 text-base-content p-4">
   <aside>
-    <p>Copyright © {new Date().getFullYear()} - All right reserved by KNULLIndustries Ltd</p>
+    <p>Copyright © {new Date().getFullYear()} - All right reserved by KNULL Industries Ltd</p>
   </aside>
 </footer>
             

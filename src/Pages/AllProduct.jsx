@@ -1,9 +1,30 @@
 
+import { useEffect, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { FaSortAlphaDown } from "react-icons/fa";
 
 const AllSportsEquipment = () => {
   const navigate = useNavigate();
   const data=useLoaderData();
+
+  const [sortedData, setSortedData] = useState(data);
+  const [isSorted, setIsSorted] = useState(false); 
+
+  useEffect(() => {
+    if (isSorted) {
+    
+      const sortedArray = [...data].sort((a, b) => a.price - b.price);
+      setSortedData(sortedArray);
+    } else {
+   
+      setSortedData(data);
+    }
+  }, [isSorted, data]);
+  const handleSort=()=>{
+
+setIsSorted(isSorted);
+
+  }
 
 
   const handleViewDetails = (id) => {
@@ -12,7 +33,10 @@ const AllSportsEquipment = () => {
 
   return (
     <div className="max-w-5xl mx-auto p-6 my-20">
+      <div className="flex justify-between mb-5 ">
       <h2 className="text-2xl font-bold text- mb-4">All Sports Equipment</h2>
+      <button onClick={handleSort} className="btn bg-secondary">Sort by Price <FaSortAlphaDown className="text-xl" /></button>
+      </div>
       <table className="w-full border-collapse border border-secondary">
         <thead>
           <tr className="bg-secondary text-left">
@@ -23,7 +47,7 @@ const AllSportsEquipment = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => (
+          {sortedData.map((item) => (
             <tr key={item.id} className="hover:bg-secondary ">
               <td className="border border-secondary p-2">{item.itemName}</td>
               <td className="border border-secondary p-2">{item.categoryName}</td>

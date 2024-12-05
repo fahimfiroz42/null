@@ -53,7 +53,7 @@ const AddItemForm = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-6 my-20">
+    <div className="max-w-3xl mx-auto bg-white dark:bg-slate-800  shadow-md rounded-lg p-6 my-20">
       <h2 className="text-2xl font-bold mb-4">Add Item</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Image */}

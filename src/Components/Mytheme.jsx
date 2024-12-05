@@ -10,7 +10,17 @@ const Mytheme = () => {
     };
 
     useEffect(() => {
-      document.querySelector('html').setAttribute('data-theme', theme);
+      // document.querySelector('html').setAttribute('data-theme', theme);
+      const htmlElement=document.documentElement;
+      htmlElement.setAttribute('data-theme', theme);
+      if(theme==='light'){
+
+        htmlElement.classList.remove("dark");
+      }
+      else{
+        htmlElement.classList.add("dark");
+      }
+
     }, [theme]);
     return (
       <label className="swap swap-rotate text-2xl">
