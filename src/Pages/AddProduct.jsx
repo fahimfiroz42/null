@@ -68,7 +68,7 @@ const AddItemForm = () => {
      <div className="flex flex-col  md:flex-row w-11/12 mx-auto items-center ">
      
 
-     <div className="w-1/2 mx-auto bg-white dark:bg-slate-800  shadow-md rounded-lg p-6 my-20">
+     <div className="w-full md:w-1/2 mx-auto bg-white dark:bg-slate-800  shadow-md rounded-lg p-6 my-20">
       <h2 className="text-2xl font-bold mb-4 border-l-4 border-primary p-2">Add Item</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Image */}
@@ -230,7 +230,7 @@ const AddItemForm = () => {
       </form>
     </div>
 
-    <div className="w-1/2">
+    <div className="w-full md:w-1/2">
       <Lottie animationData={animation2} loop={true} />
 
       </div>
