@@ -5,7 +5,7 @@ const NewArrival = () => {
             <div> <h1 className="text-2xl font-bold border-l-8 border-primary p-2 ">Featured</h1></div>
             <div className="text-3xl font-bold my-5"><h1>New Arrival</h1></div>
             <div>
-            <div className="grid grid-cols-2 gap-6 p-8 bg-gray-100 dark:bg-slate-900 min-h-screen">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-8 bg-gray-100 dark:bg-slate-900 min-h-screen">
       {/* PlayStation 5 Section */}
       <div className="bg-black text-white rounded-lg p-6 relative flex flex-col justify-between shadow-lg">
         <img

@@ -8,11 +8,13 @@ import Gallery from '../Components/Gallery';
 import Brands from '../Components/Brand';
 import Category from '../Components/Category';
 import NewArrival from '../Components/NewArrival';
+import FlashSale from '../Components/FlashSale';
 const Home = () => {
     const data =useLoaderData()
     return (
         <div>
         <Banner />
+        <FlashSale />
         
         <Category />
        <Fade >
