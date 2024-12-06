@@ -25,7 +25,7 @@ const  UserProductCard = ({product,setItem,item}) => {
             if (result.isConfirmed) {
               
 
-            fetch(`http://localhost:5000/addProduct/${id}`,{
+            fetch(`https://knull-server.vercel.app/addProduct/${id}`,{
                 method:"DELETE"
             })
             .then(res=>res.json())

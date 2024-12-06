@@ -7,6 +7,7 @@ import AboutUs from '../Components/AboutUs';
 import Gallery from '../Components/Gallery';
 import Brands from '../Components/Brand';
 import Category from '../Components/Category';
+import NewArrival from '../Components/NewArrival';
 const Home = () => {
     const data =useLoaderData()
     return (
@@ -16,7 +17,10 @@ const Home = () => {
         <Category />
        <Fade >
        <OurProduct data={data} />
+
        </Fade>
+
+       <NewArrival />
        <Brands />
        <AboutUs />
        <Gallery />

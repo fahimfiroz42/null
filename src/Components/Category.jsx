@@ -16,9 +16,9 @@ const Category = () => {
     <div className="dark:bg-slate-900">
         <div className="bg-white dark:bg-slate-900  flex flex-col w-11/12 mx-auto py-10">
       {/* Header */}
-      <h1 className="text-3xl font-bold dark:text-gray-400  text-gray-800 mb-10 text-center">
-        Sports Equipment Category
-      </h1>
+      <div> <h1 className="text-2xl font-bold border-l-8 border-primary p-2 ">
+      Categories</h1></div>
+            <div className="text-3xl font-bold my-5"><h1>Browse By Category</h1></div>
 
       {/* Grid Container */}
       <div className="grid grid-cols-2 md:grid-cols-4  gap-6">

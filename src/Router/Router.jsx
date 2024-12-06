@@ -25,7 +25,7 @@ const Router = createBrowserRouter([
         {
           path: "/",
           element:<Home/>,
-          loader:()=>fetch('http://localhost:5000/addProduct/limit')
+          loader:()=>fetch('https://knull-server.vercel.app/addProduct/limit')
         },
         {
           path: "/register",
@@ -39,7 +39,7 @@ const Router = createBrowserRouter([
         {
           path:'/allproduct',
           element:<AllSportsEquipment />,
-          loader:()=>fetch('http://localhost:5000/addProduct')
+          loader:()=>fetch('https://knull-server.vercel.app/addProduct')
         },
         {
           path:'/addproduct',
@@ -48,18 +48,18 @@ const Router = createBrowserRouter([
         {
           path:'/product/:id',
           element:<PrivateRoute><ViewDetails /></PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/addProduct/${params.id}`)
+          loader:({params})=>fetch(`https://knull-server.vercel.app/addProduct/${params.id}`)
         },
         {
           path:'/myProduct/:email',
           element:<PrivateRoute><MyProduct /></PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/userProduct/${params.email}`)
+          loader:({params})=>fetch(`https://knull-server.vercel.app/userProduct/${params.email}`)
 
         },
         {
           path:'/updateProduct/:id',
           element:<PrivateRoute><UpdateProduct /></PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/addProduct/${params.id}`)
+          loader:({params})=>fetch(`https://knull-server.vercel.app/addProduct/${params.id}`)
         }
       ]
     },

@@ -14,8 +14,9 @@ const Gallery = () => {
     return (
         <div className='my-20 w-11/12 mx-auto'>
             <div className="my-10">
-                <h1 className="text-3xl  font-bold text-center "> Our Gallery </h1>
-                <hr className="w-1/12 mx-auto border-2 border-primary" />
+            <h1 className="text-2xl font-bold border-l-8 border-primary p-2 ">
+      Gallery</h1></div>
+            <div className="text-3xl font-bold my-5"><h1>Explore our gallery</h1>
 
             </div>
 

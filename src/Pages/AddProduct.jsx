@@ -35,7 +35,7 @@ const AddItemForm = () => {
     e.preventDefault();
   
 
-    fetch("http://localhost:5000/addProduct", {
+    fetch("https://knull-server.vercel.app/addProduct", {
         method:"POST",
         headers: {
             "content-type":"application/json"

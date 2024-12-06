@@ -39,7 +39,7 @@ const UpdateProduct = () => {
   
 
    //update data functionality
-   fetch(`http://localhost:5000/addProduct/${data._id}`, {
+   fetch(`https://knull-server.vercel.app/addProduct/${data._id}`, {
        method:"PATCH",
        headers: {
            "content-type":"application/json"
