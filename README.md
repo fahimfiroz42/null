@@ -1,8 +1,64 @@
-# React + Vite
+# Project Title 
+## KNull  ❤️‍🔥
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents 📚
+-[ Description of the project.](#description)
+-[Key features of the project.](#key-features)
+-[Technologies Used](#technologies-used)
+-[Live Link](#live-link)
 
-Currently, two official plugins are available:
+## Description 📝
+  **KNull is a sports equipment online store. This is a sports accessories e-commerce website, a platform where customers can browse, purchase, and review various sports accessories, from gear to apparel, catering to different sports disciplines. The website will support user authentication and product management. The website will be built using React, React Router, and Firebase for handling routing, user authentication, and data management with mongodb and server with express .**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Key Features  🔎
+
+* **View Details**
+   Users can see the product details from view details button
+
+* **Login:**
+   One can login to our web page.
+
+* **Register:**
+   One can register to our web app.
+
+* **Forgate password**
+  One can reset their password from this web app.
+
+* **Update Product:**
+   User can update their product.
+
+* **Meet our mentors:**
+   One can meet our mentors
+
+* **Add product:**
+  User can add product
+  
+* **Give Feddback:**
+   One Give Feedback
+ 
+## Backend Technology used in the project: 🔥
+* **MongoDB**
+* **Node.js**
+* **Express.js**
+
+
+## React Fundamental concepts used in the project: 🔥
+* **Vite for improve the speed and efficieny**
+* **React for Framework**
+* **React sweetalert**
+* **React useState**
+* **React useEffect**
+* **Tailwind for CSS liabrary**
+* **DaisyUi for Tailwind**
+* **React Router**
+* **Context API**
+* **React Icon**
+* **Custom Hook**
+
+## Live Link 🔴
+
+**([KNull: **https://knull-1244f.web.app/**](https://knull-1244f.web.app/))**
+
+
+
