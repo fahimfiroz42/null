@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { FaSortAlphaDown } from "react-icons/fa";
 
+
 const AllSportsEquipment = () => {
   const navigate = useNavigate();
   const data=useLoaderData();
@@ -13,8 +14,9 @@ const AllSportsEquipment = () => {
   useEffect(() => {
     if (isSorted) {
     
-      const sortedArray = [...data].sort((a, b) => a.price - b.price);
+      const sortedArray = [...data].sort((a, b) => b.price - a.price);
       setSortedData(sortedArray);
+     
     } else {
    
       setSortedData(data);
@@ -22,7 +24,7 @@ const AllSportsEquipment = () => {
   }, [isSorted, data]);
   const handleSort=()=>{
 
-setIsSorted(isSorted);
+setIsSorted(!isSorted);
 
   }
 
@@ -35,7 +37,11 @@ setIsSorted(isSorted);
     <div className="max-w-5xl mx-auto p-6 my-20">
       <div className="flex justify-between mb-5 ">
       <h2 className="text-2xl font-bold text- mb-4">All Sports Equipment</h2>
+      <a data-tooltip-id="my-tooltip" data-tooltip-content="Double click to reset sort">
       <button onClick={handleSort} className="btn bg-secondary">Sort by Price <FaSortAlphaDown className="text-xl" /></button>
+      </a>
+    
+     
       </div>
       <table className="w-full border-collapse border border-secondary">
         <thead>
