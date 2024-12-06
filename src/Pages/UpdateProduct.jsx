@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../AuthPovider/AuthPovider";
 import Swal from "sweetalert2";
 import { useLoaderData } from "react-router-dom";
+import Lottie from "lottie-react";
+import animation4 from "../assets/animation4.json"
 
 const UpdateProduct = () => {
     const data=useLoaderData()
@@ -57,8 +59,21 @@ const UpdateProduct = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-6 my-20">
-      <h2 className="text-2xl font-bold mb-4">Add Item</h2>
+    <div>
+
+<div className="bg-secondary dark:bg-slate-700 p-4 flex items-center justify-between">
+        <h1 className="text-3xl font-bold">Update Your Product</h1>
+        <Lottie animationData={animation4} className="w-52 mix-blend-multiply " loop={true} />
+        
+      </div>
+
+
+
+
+
+
+<div className="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-6 my-20">
+      <h2 className="text-2xl border-l-8 pl-2 border-primary font-bold mb-4">Update Item</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Image */}
         <div>
@@ -217,6 +232,7 @@ const UpdateProduct = () => {
           </button>
         </div>
       </form>
+    </div>
     </div>
   );
 };

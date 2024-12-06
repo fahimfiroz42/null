@@ -1,7 +1,8 @@
 
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-
+import { TiDelete } from "react-icons/ti";
+import { GrUpdate } from "react-icons/gr";
 
 
 
@@ -126,13 +127,13 @@ const  UserProductCard = ({product,setItem,item}) => {
         </Link>  */}
 
         <div className="flex justify-between ">
-        <Link to={`/updateProduct/${_id}`}><button className="mt-4 btn w-full bg-primary font-bold py-2 rounded-lg hover:bg-green-500 transition">
-          Update
+        <Link to={`/updateProduct/${_id}`}><button className="mt-4 btn w-full bg-primary rounded-3xl font-bold py-2  hover:bg-green-500 transition">
+          Update <GrUpdate className="" />
         </button>
         </Link> 
 
-        <Link ><button onClick={() => handleDelete(_id)} className="mt-4 btn w-full bg-primary font-bold py-2 rounded-lg hover:bg-green-500 transition">
-          Delete
+        <Link ><button onClick={() => handleDelete(_id)} className="mt-4 btn w-full bg-primary font-bold py-2 rounded-3xl hover:bg-green-500 transition">
+          Delete <TiDelete className="text-2xl" />
         </button>
         </Link> 
         </div>

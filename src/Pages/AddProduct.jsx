@@ -1,6 +1,9 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthPovider/AuthPovider";
 import Swal from "sweetalert2";
+import Lottie from "lottie-react";
+import addfileAnimation from "../assets/Animation - 1733498800902.json"
+import animation2 from "../assets/animation2.json"
 
 const AddItemForm = () => {
 
@@ -53,8 +56,20 @@ const AddItemForm = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto bg-white dark:bg-slate-800  shadow-md rounded-lg p-6 my-20">
-      <h2 className="text-2xl font-bold mb-4">Add Item</h2>
+    <div className="">
+      <div className="bg-secondary dark:bg-slate-700 p-4 flex items-center justify-between">
+        <h1 className="text-3xl font-bold">Add Your Product</h1>
+        <Lottie animationData={addfileAnimation} loop={true} />
+        
+      </div>
+     
+
+
+     <div className="flex flex-col  md:flex-row w-11/12 mx-auto items-center ">
+     
+
+     <div className="w-1/2 mx-auto bg-white dark:bg-slate-800  shadow-md rounded-lg p-6 my-20">
+      <h2 className="text-2xl font-bold mb-4 border-l-4 border-primary p-2">Add Item</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Image */}
         <div>
@@ -213,6 +228,17 @@ const AddItemForm = () => {
           </button>
         </div>
       </form>
+    </div>
+
+    <div className="w-1/2">
+      <Lottie animationData={animation2} loop={true} />
+
+      </div>
+
+
+
+
+     </div>
     </div>
   );
 };
