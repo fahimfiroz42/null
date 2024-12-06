@@ -1,7 +1,9 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../Components/UseTitle';
 
 const ViewDetails = () => {
+  useTitle('View Details')
     const product = useLoaderData();
     const { image, itemName, categoryName, price, rating, description, customization, processingTime, stockStatus } = product;
   return (
@@ -69,9 +71,9 @@ const ViewDetails = () => {
           <button className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">
             Add to Cart
           </button>
-          <button className="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition">
+          <Link  to={'/'} className="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition">
             Back to Products
-          </button>
+          </Link>
         </div>
       </div>
     </div>

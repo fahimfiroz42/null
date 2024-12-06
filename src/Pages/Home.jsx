@@ -9,7 +9,9 @@ import Brands from '../Components/Brand';
 import Category from '../Components/Category';
 import NewArrival from '../Components/NewArrival';
 import FlashSale from '../Components/FlashSale';
+import useTitle from '../Components/UseTitle';
 const Home = () => {
+    useTitle('Home')
     const data =useLoaderData()
     return (
         <div>

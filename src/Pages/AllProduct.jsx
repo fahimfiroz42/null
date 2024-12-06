@@ -2,10 +2,12 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { FaSortAlphaDown } from "react-icons/fa";
-import Lottie from "lottie-react";
+import useTitle from "../Components/UseTitle";
+
 
 
 const AllSportsEquipment = () => {
+  useTitle('All Equipment')
   const navigate = useNavigate();
   const data=useLoaderData();
 

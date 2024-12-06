@@ -4,9 +4,11 @@ import Swal from "sweetalert2";
 import Lottie from "lottie-react";
 import addfileAnimation from "../assets/Animation - 1733498800902.json"
 import animation2 from "../assets/animation2.json"
+import useTitle from "../Components/UseTitle";
 
 const AddItemForm = () => {
-
+    
+   useTitle('Add Product')
 
     const {user}=useContext(AuthContext)
     const {displayName,email,uid}=user
@@ -52,7 +54,7 @@ const AddItemForm = () => {
     })
 
    
-    // Add logic to submit form data to your database
+ 
   };
 
   return (

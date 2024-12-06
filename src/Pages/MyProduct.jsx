@@ -3,9 +3,11 @@ import UserProductCard from "../Components/UserProductCard";
 import { useState } from "react";
 import Lottie from "lottie-react";
 import animation3 from "../assets/animation3.json"
+import useTitle from "../Components/UseTitle";
 
 
 const MyProduct = () => {
+    useTitle('My Equipment')
     const data=useLoaderData()
     const [item,setItem]=useState(data)
 

@@ -4,8 +4,10 @@ import Swal from "sweetalert2";
 import { useLoaderData } from "react-router-dom";
 import Lottie from "lottie-react";
 import animation4 from "../assets/animation4.json"
+import useTitle from "../Components/UseTitle";
 
 const UpdateProduct = () => {
+  useTitle("Update Product")
     const data=useLoaderData()
     const { image, itemName, categoryName, price, rating, description, customization, processingTime, stockStatus } =data || {};
 
