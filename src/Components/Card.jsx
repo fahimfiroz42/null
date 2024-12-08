@@ -77,7 +77,7 @@ const Card = ({product}) => {
 
 <div className="relative m-10 w-full max-w-xs overflow-hidden rounded-lg bg-white dark:bg-gray-800 shadow-md">
   
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center hover:scale-105 duration-300">
     <img className="h-60 rounded-t-lg  w-full object-contain" src={image} alt="product image" />
     </div>
  

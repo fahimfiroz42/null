@@ -13,6 +13,7 @@ const UpdateProduct = () => {
 
 
     const {user}=useContext(AuthContext)
+    const [loading,setLoading] = useState(false);
     const {displayName,email,uid}=user
     
 
@@ -40,6 +41,14 @@ const UpdateProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
+
+    const formattedData = {
+      ...formData,
+      price: parseFloat(formData.price) || 0,
+      rating: parseFloat(formData.rating) || 0, 
+      stockStatus: parseInt(formData.stockStatus, 10) || 0, 
+    };
   
 
    //update data functionality
@@ -48,11 +57,18 @@ const UpdateProduct = () => {
        headers: {
            "content-type":"application/json"
        },
-       body:JSON.stringify(formData)
+       body:JSON.stringify(formattedData)
        
    })
    .then(res=>res.json())  
-   .then(data=>{if(data.modifiedCount){Swal.fire("Item updated successfully")}})
+   .then(data=>{
+    setLoading(false);
+    if(data.modifiedCount){Swal.fire({
+      icon: "success",
+      text: "Item updated successfully"})}
+  
+   
+  })
 
    
 
@@ -225,12 +241,16 @@ const UpdateProduct = () => {
         </div>
 
         {/* Submit Button */}
-        <div>
+        <div className="flex items-center">
+ 
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-primary text-white font-semibold rounded-md hover:bg-secondary transition duration-300 ease-in-out"
-          >
+            className="w-full py-2 px-4 bg-primary text-white font-semibold rounded-md hover:bg-secondary hover:text-black transition duration-300 ease-in-out"
+          > 
+           
+           {loading && <span className="loading loading-spinner loading-sm mr-5"></span>}
             Submit
+            
           </button>
         </div>
       </form>

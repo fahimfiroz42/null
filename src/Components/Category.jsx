@@ -21,17 +21,17 @@ const Category = () => {
             <div className="text-3xl font-bold my-5"><h1>Browse By Category</h1></div>
 
       {/* Grid Container */}
-      <div className="grid grid-cols-2 md:grid-cols-4  gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-4   gap-6">
         {sportsItems.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col items-center bg-secondary dark:bg-slate-700 rounded-lg p-6 shadow-md"
+            className="flex hover:translate-y-[-10px] duration-300 flex-col items-center bg-secondary dark:bg-slate-700 rounded-lg p-6 shadow-md"
           >
             {/* Image */}
             <img
               src={item.image}
               alt={item.name}
-              className="w-28 h-28 mb-4 object-contain"
+              className="w-28 h-28 mb-4 object-contain hover:scale-125 duration-300"
             />
             {/* Name */}
             <h2 className="text-lg dark:text-gray-400 font-medium text-gray-700">{item.name}</h2>

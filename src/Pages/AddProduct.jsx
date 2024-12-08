@@ -11,6 +11,7 @@ const AddItemForm = () => {
    useTitle('Add Product')
 
     const {user}=useContext(AuthContext)
+    const [loading,setLoading] = useState(false);
     const {displayName,email,uid}=user
     
 
@@ -24,7 +25,7 @@ const AddItemForm = () => {
     rating: "",
     customization: "",
     processingTime: "",
-    stockStatus: "",
+    stockStatus:  "",
     displayName:displayName,
     email:email,
     uid:uid
@@ -38,6 +39,14 @@ const AddItemForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
+
+    const formattedData = {
+      ...formData,
+      price: parseFloat(formData.price) || 0,
+      rating: parseFloat(formData.rating) || 0, 
+      stockStatus: parseInt(formData.stockStatus, 10) || 0, 
+    };
   
 
     fetch("https://knull-server.vercel.app/addProduct", {
@@ -45,12 +54,15 @@ const AddItemForm = () => {
         headers: {
             "content-type":"application/json"
         },
-        body:JSON.stringify(formData)
+        body:JSON.stringify(formattedData)
         
     })
     .then(res=>res.json())  
     .then(data=>{
-        if(data.insertedId){Swal.fire("Item added successfully")}
+        setLoading(false);
+        if(data.insertedId){Swal.fire({
+          icon: "success",
+          text: "Item added successfully"})}
     })
 
    
@@ -224,9 +236,11 @@ const AddItemForm = () => {
         <div>
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-primary text-white font-semibold rounded-md hover:bg-secondary transition duration-300 ease-in-out"
+            className="w-full py-2 px-4 bg-primary text-white font-semibold rounded-md hover:bg-secondary hover:text-black transition duration-300 ease-in-out"
           >
-            Submit
+              {loading && <span className="loading loading-spinner loading-sm mr-5"></span>}
+              Submit
+        
           </button>
         </div>
       </form>

@@ -10,6 +10,9 @@ import Category from '../Components/Category';
 import NewArrival from '../Components/NewArrival';
 import FlashSale from '../Components/FlashSale';
 import useTitle from '../Components/UseTitle';
+import Offer from '../Components/Offer';
+import VismeForm from '../Components/Visme';
+import ParallaxSection from '../Components/Paralex';
 const Home = () => {
     useTitle('Home')
     const data =useLoaderData()
@@ -18,16 +21,23 @@ const Home = () => {
         <Banner />
         <FlashSale />
         
+        
         <Category />
        <Fade >
        <OurProduct data={data} />
 
        </Fade>
 
+       <Offer/>
+
        <NewArrival />
        <Brands />
        <AboutUs />
+       <ParallaxSection/>
        <Gallery />
+       <VismeForm />
+
+      
             
         </div>
     );

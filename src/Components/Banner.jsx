@@ -3,14 +3,14 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
-// import 'animate.css'
+
 import { Link } from 'react-router-dom';
 import { Autoplay, EffectFade } from 'swiper/modules';
 
 const Banner = () => {
 return (
       <>
-        <section className="  flex min-h-screen justify-center bg-secondary dark:bg-gray-900 text-white w-full relative pt-10 pb-12 "> 
+        <section className="  flex m justify-center bg-secondary dark:bg-gray-900 text-white w-full relative pt-10 pb-12 "> 
             <div className="w-full  px-4 sm:px-6 md:px-8 flex justify-center">
                 <Swiper
                     loop={true}
@@ -33,7 +33,7 @@ return (
                                         `url(${slider.img})`,
                                 }}
                             >
-                                <div className="w-full h-full bg-black/70 p-10 md:p-12 lg:p-16 space-y-4 sm:space-y-6 flex items-center">
+                                <div className="w-full h-full bg-black/50 p-10 md:p-12 lg:p-16 space-y-4 sm:space-y-6 flex items-center">
                                     <div className="w-full md:w-8/12 lg:w-7/12 space-y-4 sm:space-y-5">
                                         <h2 className="animate__animated animate__fadeInDown text-xl sm:text-2xl md:text-3xl lg:text-6xl font-semibold">
                                             {slider.title}

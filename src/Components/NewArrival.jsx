@@ -7,14 +7,14 @@ const NewArrival = () => {
             <div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-8 bg-gray-100 dark:bg-slate-900 min-h-screen">
       {/* PlayStation 5 Section */}
-      <div className="bg-black text-white rounded-lg p-6 relative flex flex-col justify-between shadow-lg">
+      <div className="bg-black  text-white rounded-lg p-6 relative flex flex-col justify-between shadow-lg">
         <img
           src="https://i.ibb.co.com/bd0Ftbr/nike-air-force-1.jpg" // Replace with PS5 image
           alt="PlayStation 5"
-          className="absolute inset-0 w-full h-full object-cover opacity-50 hover:opacity-80 transition-opacity duration-300 ease-in-out"
+          className="absolute inset-0 w-full h-full object-cover   opacity-50 hover:opacity-80 transition-opacity duration-300 ease-in-out"
         />
-        <div className="relative">
-          <h2 className="text-2xl font-bold mb-2">Nike Air 1</h2>
+        <div className="relative ">
+          <h2 className="text-2xl  font-bold mb-2">Nike Air 1</h2>
           <p className="text-sm mb-4">
             The Nike Air 1 is a sleek and stylish sneaker that combines
             comfort and style.
