@@ -24,7 +24,7 @@ const ParallaxSection = () => {
       </div>
 
       {/* Content Section */}
-      <div className="bg-gray-100 py-16 px-8">
+      <div className="bg-gray-100 dark:bg-slate-900  py-16 px-8">
         <h2 className="text-3xl font-bold mb-4 text-center">
           Find the Perfect Equipment for Every Sport
         </h2>

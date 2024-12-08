@@ -21,7 +21,7 @@ return (
                         disableOnInteraction: false, 
                       }}
                       modules={[EffectFade, Autoplay]}  
-                    className="w-full sliderWidth  b rounded-2xl cursor-grabbing"
+                    className="w-full sliderWidth   rounded-2xl cursor-grabbing"
                 >
                     {
                         SliderData.map((slider, index) => (
@@ -33,7 +33,7 @@ return (
                                         `url(${slider.img})`,
                                 }}
                             >
-                                <div className="w-full h-full bg-black/50 p-10 md:p-12 lg:p-16 space-y-4 sm:space-y-6 flex items-center">
+                                <div className="w-full h-full bg-black/30 p-10 md:p-12 lg:p-16 space-y-4 sm:space-y-6 flex items-center">
                                     <div className="w-full md:w-8/12 lg:w-7/12 space-y-4 sm:space-y-5">
                                         <h2 className="animate__animated animate__fadeInDown text-xl sm:text-2xl md:text-3xl lg:text-6xl font-semibold">
                                             {slider.title}
@@ -68,14 +68,14 @@ const SliderData=[
     {
         "id": 1,
         "title": "Explore Top Sports Gear",
-        "img": "https://i.ibb.co.com/kg2xNvS/2147618015.jpg",
+        "img": "https://i.ibb.co.com/fFhhwX8/2147618015.jpg",
         "description": "Discover a wide range of high-quality sports equipment for every athlete. From beginners to professionals, we have the gear you need to perform your best.",
         "buttonText": "Shop Now"
     },
     {
         "id": 2,
         "title": "Upgrade Your Equipment",
-        "img": "https://i.ibb.co.com/SmsCrDn/football-composition-with-jersey.jpg",
+        "img": "https://i.ibb.co.com/Bg2jPzd/an-illustration-of-various-sports-equipment-there-q-KX6-Qc-Sp-RPiin-DDn8oeplg-BN3-De-Ss-ZSISI67-Lkhk.jpg",
         "description": "Level up your game with the latest and most durable sports equipment. Get expert recommendations to find the perfect fit for your needs.",
         "buttonText": "Explore More"
     },
@@ -89,14 +89,14 @@ const SliderData=[
     {
         "id": 4,
         "title": "Enhance Your Training",
-        "img": "https://i.ibb.co.com/bmWy5k1/full-shot-couple-doing-workout-exercises.jpg",
+        "img": "https://i.ibb.co.com/VgWp9hX/Poster-Design.jpg",
         "description": "Train smarter with specialized equipment designed to improve performance. From agility tools to resistance bands, find everything you need here.",
         "buttonText": "Check It Out"
     },
     {
         "id": 5,
         "title": "Gear Up for the Outdoors",
-        "img": "https://i.ibb.co.com/BnjJY2k/traveler-making-his-backpack.jpg",
+        "img": "https://i.ibb.co.com/F6CwR8Q/Under-Armour-NFL-Combine.jpg",
         "description": "Get ready for outdoor adventures with our premium selection of camping, hiking, and outdoor sports gear. Built to withstand the toughest conditions.",
         "buttonText": "Shop Outdoor Gear"
     }
