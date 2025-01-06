@@ -5,77 +5,9 @@ import { TbListDetails } from "react-icons/tb";
 const Card = ({product}) => {
     const {_id,image,itemName,stockStatus,price,rating}=product
   return (
-//     <div classNameName="bg-white rounded-3xl shadow-lg p-4 ">
-//       {/* Image Section */}
-//       <div classNameName="relative ">
-//         <div classNameName="border">
-//         <img
-//           src={image}
-//           alt="Riddell Speedflex Helmet"
-//           classNameName="w-full rounded-lg "
-//         />
-//         </div>
-//         <button
-//           classNameName="absolute top-2 right-2 bg-primary p-1 rounded-full shadow-md hover:bg-gray-200"
-//           aria-label="Add to Favorites"
-//         >
-//           <svg
-//             xmlns="http://www.w3.org/2000/svg"
-//             fill="none"
-//             viewBox="0 0 24 24"
-//             strokeWidth={1.5}
-//             stroke="currentColor"
-//             classNameName="w-5 h-5 text-white "
-//           >
-//             <path
-//               strokeLinecap="round"
-//               strokeLinejoin="round"
-//               d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-//             />
-//           </svg>
-//         </button>
-//       </div>
 
-//       {/* Details Section */}
-//       <div classNameName="mt-4">
-//         <div classNameName="flex justify-between items-center">
-//         <h3 classNameName="text-lg font-bold text-gray-800">
-//          {itemName}
-//         </h3>
-//         <p classNameName= "badge bg-primary text-sm text-gray-600">{stockStatus} left</p>
-//         </div>
-//         <div classNameName="flex  justify-between items-center">
-//         <p classNameName="text-xl font-semibold text-gray-900 mt-1">{price} $</p>
 
-// {/* Ratings */}
-// <div classNameName="flex items-center mt-2">
-//   <div classNameName="flex text-yellow-500">
-//     {[...Array(5)].map((_, index) => (
-//       <svg
-//         key={index}
-//         xmlns="http://www.w3.org/2000/svg"
-//         fill="currentColor"
-//         viewBox="0 0 24 24"
-//         strokeWidth={1.5}
-//         stroke="currentColor"
-//         classNameName="w-4 h-4"
-//       >
-//         <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-//       </svg>
-//     ))}
-//   </div>
-// </div>
-
-//         </div>
-//         {/* View Details Button */}
-//        <Link to={`/product/${_id}`}><button classNameName="mt-4 w-full bg-primary font-bold py-2 rounded-lg hover:bg-green-500 transition">
-//           View Details
-//         </button>
-//         </Link> 
-//       </div>
-//     </div>
-
-<div className="relative m-10 w-full max-w-xs overflow-hidden rounded-lg bg-white dark:bg-gray-800 shadow-md">
+<div className="relative w-full max-w-xs overflow-hidden rounded-lg bg-white dark:bg-gray-800 shadow-md">
   
     <div className="flex items-center justify-center hover:scale-105 duration-300">
     <img className="h-60 rounded-t-lg  w-full object-contain" src={image} alt="product image" />
