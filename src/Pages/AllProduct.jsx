@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { FaSortAlphaDown } from "react-icons/fa";
 import useTitle from "../Components/UseTitle";
+import Card from "../Components/Card";
 
 
 
@@ -49,7 +50,7 @@ setIsSorted(!isSorted);
         
       </div>
 
-    <div className="max-w-5xl mx-auto p-6 my-20">
+    <div className="w-11/12 mx-auto p-6 my-20">
       <div className="flex justify-between mb-5 items-center ">
       <h2 className="text-2xl font-bold border-l-8 border-primary p-2 text- mb-4">All  Equipment</h2>
       <a data-tooltip-id="my-tooltip" data-tooltip-content="Double click to reset sort">
@@ -58,7 +59,7 @@ setIsSorted(!isSorted);
     
      
       </div>
-      <table className="w-full border-collapse border border-secondary">
+      {/* <table className="w-full border-collapse border border-secondary">
         <thead>
           <tr className="bg-secondary text-left">
             <th className="border border-secondary p-2">Name</th>
@@ -84,7 +85,17 @@ setIsSorted(!isSorted);
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
+
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        {
+          sortedData.map(product=><Card key={product._id} product={product}> </Card>)
+        }
+
+
+
+      </div>
     </div>
     </div>
   );

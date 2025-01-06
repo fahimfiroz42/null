@@ -1,4 +1,5 @@
-import React from "react";
+import Marquee from "react-fast-marquee";
+
 
 const Brands = () => {
   const brands = [
@@ -19,7 +20,8 @@ const Brands = () => {
         <h2 className="text-4xl font-bold dark:text-gray-300">Brands</h2>
         <hr className="w-1/12 mx-auto border-2 border-primary" />
       </div>
-      <div className="flex flex-wrap justify-around gap-6">
+      <Marquee pauseOnHover={true} speed={100}>
+      <div className="flex flex-wrap justify-around gap-10">
         {brands.map((brand, index) => (
           <div key={index} className="flex justify-center items-center">
             <img
@@ -30,6 +32,7 @@ const Brands = () => {
           </div>
         ))}
       </div>
+      </Marquee>
     </div>
    </div>
   );
