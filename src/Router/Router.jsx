@@ -53,10 +53,9 @@ const Router = createBrowserRouter([
           loader:({params})=>fetch(`https://knull-server.vercel.app/addProduct/${params.id}`)
         },
         {
-          path:'/myProduct/:email',
-          element:<PrivateRoute><MyProduct /></PrivateRoute>,
-          loader:({params})=>fetch(`https://knull-server.vercel.app/userProduct/${params.email}`)
-
+          path:'/myProduct',
+          element:<PrivateRoute><MyProduct /></PrivateRoute>
+         
         },
         {
           path:'/updateProduct/:id',

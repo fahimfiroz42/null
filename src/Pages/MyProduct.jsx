@@ -1,19 +1,44 @@
 import { useLoaderData } from "react-router-dom";
 import UserProductCard from "../Components/UserProductCard";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import animation3 from "../assets/animation3.json"
 import useTitle from "../Components/UseTitle";
+import axios from "axios";
+import { AuthContext } from "../AuthPovider/AuthPovider";
+import Swal from "sweetalert2";
 
 
 const MyProduct = () => {
+    const {user}=useContext(AuthContext)
     useTitle('My Equipment')
-    const data=useLoaderData()
-    const [item,setItem]=useState(data)
+    
+    const [item,setItem]=useState([])
+
+    useEffect(()=>{
+        fetchData()
+    },[user?.email])
+
+    const fetchData=()=>{
+        try {
+            axios.get(`http://localhost:5000/userProduct?email=${user.email}`,{withCredentials:true} )  
+            .then(res=>setItem(res.data))
+        } catch (error) {
+         Swal.fire({
+             title: 'Error!',
+             text: error.message,
+             icon: 'error',
+             confirmButtonText: 'ok'
+         })
+        }
+     
+       
+
+    }
 
     
     return (
-        <div className="min-h-screen  "> 
+        <div className="min-h-screen  ">  
             
             <div className=" flex justify-between items-center  bg-secondary">
                 

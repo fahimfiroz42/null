@@ -9,6 +9,7 @@ import { FaEye } from "react-icons/fa";
 
 import useTitle from "../Components/UseTitle";
 import { AuthContext } from "../AuthPovider/AuthPovider";
+import axios from "axios";
 
 const Login = () => {
   useTitle('Login')
@@ -51,6 +52,12 @@ const Login = () => {
     const password = form.password.value;
     loginUser(email,password)
     .then(result=>{
+      const user={email:email}
+       axios.post('http://localhost:5000/jwt',user,{withCredentials:true})
+       .then(data=>console.log(data))
+     
+
+
       setUser(result.user)
         Swal.fire({
             title: `Welcome ${result.user.email}`,

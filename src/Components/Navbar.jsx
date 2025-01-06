@@ -41,7 +41,7 @@ const Navbar = () => {
         <li><NavLink to={'/'}>Home</NavLink></li>
       <li><NavLink to={'/allProduct'}>All Equipment</NavLink></li>
       <li><NavLink to={'/addProduct'}>Add Equipment</NavLink></li>
-      <li><NavLink to={`/myProduct/${user?.email}`}>My Equipment</NavLink></li>
+      <li><NavLink to={`/myProduct`}>My Equipment</NavLink></li>
 
       </ul>
     </div>
@@ -52,7 +52,7 @@ const Navbar = () => {
       <li><NavLink to={'/'}  >Home</NavLink></li>
       <li><NavLink to={'/allProduct'}>All Equipment</NavLink></li>
       <li><NavLink to={'/addProduct'}>Add Equipment</NavLink></li>
-      <li><NavLink to={`/myProduct/${user?.email}`} >My Equipment</NavLink></li>
+      <li><NavLink to={`/myProduct`} >My Equipment</NavLink></li>
 
       
      
