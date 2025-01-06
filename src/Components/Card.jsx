@@ -45,9 +45,9 @@ const Card = ({product}) => {
         <span className="text-3xl font-bold dark:text-white text-slate-900">{price}</span>
         <span className="text-sm dark:text-white text-slate-900 line-through">$299</span>
       </p>
-      <Link to={`/product/${_id}`} className="flex items-center rounded-md bg-primary px-5 py-2.5 text-center text-sm font-medium text-black hover:bg-secondary focus:outline-none focus:ring-4 focus:ring-gray-300">
-      <TbListDetails  className="mr-2 text-xl"/>
-        View Details</Link>
+      <Link to={`/product/${_id}`} className="flex items-center rounded-md btn btn-sm bg-primary  text-center text-sm font-medium text-black hover:bg-secondary focus:outline-none focus:ring-4 focus:ring-gray-300">
+      <TbListDetails  className=" text-xl"/>
+        Details</Link>
     </div>
   </div>
 </div>
