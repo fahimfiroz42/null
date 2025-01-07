@@ -52,12 +52,7 @@ const Login = () => {
     const password = form.password.value;
     loginUser(email,password)
     .then(result=>{
-      const user={email:email}
-       axios.post('https://knull-server.vercel.app/jwt',user,{withCredentials:true})
-       .then(data=>console.log(data))
      
-
-
       setUser(result.user)
         Swal.fire({
             title: `Welcome ${result.user.email}`,
