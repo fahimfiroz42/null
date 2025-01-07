@@ -16,6 +16,7 @@ import UpdateProduct from "../Pages/UpdateProduct";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 import AboutUsPage from "../Pages/AboutUSPage";
+import ContactUS from "../Pages/ContactUS";
 
 
 
@@ -67,6 +68,10 @@ const Router = createBrowserRouter([
         {
           path:'/aboutUs',
           element:<AboutUsPage/>
+        },
+        {
+          path:'/contactUs',
+          element:<ContactUS/>
         }
       ]
     },
