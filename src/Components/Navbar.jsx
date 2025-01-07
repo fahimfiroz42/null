@@ -17,7 +17,7 @@ const Navbar = () => {
   }
 
     return (
-        <div className="" >
+        <div className="sticky top-0 z-50" >
             <div className="  navbar bg-base-100">
   <div className="navbar-start">
     <div className="dropdown">
@@ -35,28 +35,55 @@ const Navbar = () => {
             d="M4 6h16M4 12h8m-8 6h16" />
         </svg>
       </div>
+     {
+      user?.email?<>
+      
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[50] mt-3 w-52 p-2 shadow">
-        <li><NavLink to={'/'}>Home</NavLink></li>
-      <li><NavLink to={'/allProduct'}>All Equipment</NavLink></li>
-      <li><NavLink to={'/addProduct'}>Add Equipment</NavLink></li>
-      <li><NavLink to={`/myProduct`}>My Equipment</NavLink></li>
 
-      </ul>
-    </div>
-    <a className="btn btn-ghost font-bold text-3xl "><span className="text-primary">K</span>Null</a>
-  </div>
-  <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 text-md font-bold text-gray-400">
-      <li><NavLink to={'/'}  >Home</NavLink></li>
+<li><NavLink to={'/'}  >Home</NavLink></li>
       <li><NavLink to={'/allProduct'}>All Equipment</NavLink></li>
       <li><NavLink to={'/addProduct'}>Add Equipment</NavLink></li>
       <li><NavLink to={`/myProduct`} >My Equipment</NavLink></li>
 
+      </ul>
+
+
       
-     
+      </>:<>
+      <ul
+        tabIndex={0}
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[50] mt-3 w-52 p-2 shadow">
+
+<li><NavLink to={'/'}  >Home</NavLink></li>
+<li><NavLink to={'/allProduct'}>All Equipment</NavLink></li> 
+
+          </ul>
+      
+      
+      </>
+     }
+    </div>
+    <a className="btn btn-ghost font-bold text-3xl "><span className="text-primary">K</span>Null</a>
+  </div>
+  <div className="navbar-center hidden lg:flex">
+    {
+      user?.email? <>
+      <ul className="menu menu-horizontal px-1 text-md font-bold text-gray-400">
+      <li><NavLink to={'/'}  >Home</NavLink></li>
+      <li><NavLink to={'/allProduct'}>All Equipment</NavLink></li>
+      <li><NavLink to={'/addProduct'}>Add Equipment</NavLink></li>
+      <li><NavLink to={`/myProduct`} >My Equipment</NavLink></li>
     </ul>
+      </>:
+      <>
+    <ul className="menu menu-horizontal px-1 text-md font-bold text-gray-400">
+     <li><NavLink to={'/'}  >Home</NavLink></li>
+     <li><NavLink to={'/allProduct'}>All Equipment</NavLink></li> 
+    </ul>
+      </>
+    }
   </div>
   <div className="navbar-end space-x-2 z-50 ">
   <a  data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName} >
