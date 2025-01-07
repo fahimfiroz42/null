@@ -5,3 +5,10 @@
 body{
     font-family: "Nunito", serif;
 }
+
+th{
+    @apply px-6 py-3  text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider;
+}
+td{
+    @apply px-6 py-4  border-b-2 border-secondary whitespace-nowrap text-lg leading-5 text-gray-900;
+}

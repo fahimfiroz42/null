@@ -50,7 +50,7 @@ setIsSorted(!isSorted);
         
       </div>
 
-    <div className="w-11/12 mx-auto p-6 my-20">
+    <div className="w-11/12 mx-auto  my-20">
       <div className="flex justify-between mb-5 items-center ">
       <h2 className="text-2xl font-bold border-l-8 border-primary p-2 text- mb-4">All  Equipment</h2>
       <a data-tooltip-id="my-tooltip" data-tooltip-content="Double click to reset sort">
