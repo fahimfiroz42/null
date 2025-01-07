@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const ParallaxSection = () => {
@@ -34,12 +35,12 @@ const ParallaxSection = () => {
 
         {/* CTA Button */}
         <div className="flex justify-center mt-8">
-          <a
-            href="/shop"
+          <Link
+            to="/allproduct"
             className="py-3 px-6 bg-primary text-white text-lg font-semibold rounded-md hover:text-black hover:bg-secondary transition duration-300 ease-in-out"
           >
             Shop Now
-          </a>
+          </Link>
         </div>
       </div>
     </div>
