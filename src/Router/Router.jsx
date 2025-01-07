@@ -15,6 +15,8 @@ import MyProduct from "../Pages/MyProduct";
 import UpdateProduct from "../Pages/UpdateProduct";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
+import AboutUsPage from "../Pages/AboutUSPage";
+
 
 
 
@@ -61,6 +63,10 @@ const Router = createBrowserRouter([
           path:'/updateProduct/:id',
           element:<PrivateRoute><UpdateProduct /></PrivateRoute>,
           loader:({params})=>fetch(`https://knull-server.vercel.app/addProduct/${params.id}`)
+        },
+        {
+          path:'/aboutUs',
+          element:<AboutUsPage/>
         }
       ]
     },

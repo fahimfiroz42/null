@@ -10,7 +10,7 @@ import { Autoplay, EffectFade } from 'swiper/modules';
 const Banner = () => {
 return (
       <>
-        <section className="  flex m justify-center bg-secondary dark:bg-gray-900 text-white w-full relative pt-10 pb-12 "> 
+        <section className="  flex  justify-center bg-secondary dark:bg-gray-900 text-white w-full relative pt-10 pb-12 "> 
             <div className="w-full  px-4 sm:px-6 md:px-8 flex justify-center">
                 <Swiper
                     loop={true}

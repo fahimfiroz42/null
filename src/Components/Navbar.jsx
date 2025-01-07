@@ -17,8 +17,8 @@ const Navbar = () => {
   }
 
     return (
-        <div className="sticky top-0 z-50" >
-            <div className="  navbar bg-base-100">
+        <div className="sticky top-0 z-50 bg-base-100" >
+            <div className="w-11/12 mx-auto  navbar bg-base-100 ">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -58,6 +58,7 @@ const Navbar = () => {
 
 <li><NavLink to={'/'}  >Home</NavLink></li>
 <li><NavLink to={'/allProduct'}>All Equipment</NavLink></li> 
+<li><NavLink to={'/aboutUs'}>About Us</NavLink></li> 
 
           </ul>
       
@@ -73,14 +74,17 @@ const Navbar = () => {
       <ul className="menu menu-horizontal px-1 text-md font-bold text-gray-400">
       <li><NavLink to={'/'}  >Home</NavLink></li>
       <li><NavLink to={'/allProduct'}>All Equipment</NavLink></li>
+
       <li><NavLink to={'/addProduct'}>Add Equipment</NavLink></li>
       <li><NavLink to={`/myProduct`} >My Equipment</NavLink></li>
+      <li><NavLink to={'/aboutUs'}>About Us</NavLink></li> 
     </ul>
       </>:
       <>
     <ul className="menu menu-horizontal px-1 text-md font-bold text-gray-400">
      <li><NavLink to={'/'}  >Home</NavLink></li>
      <li><NavLink to={'/allProduct'}>All Equipment</NavLink></li> 
+     <li><NavLink to={'/aboutUs'}>About Us</NavLink></li> 
     </ul>
       </>
     }
