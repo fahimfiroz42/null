@@ -70,7 +70,7 @@ const MyProduct = () => {
 
     const fetchData=()=>{
         try {
-            axios.get(`http://localhost:5000/userProduct?email=${user.email}`,{withCredentials:true} )  
+            axios.get(`https://knull-server.vercel.app/userProduct?email=${user.email}`,{withCredentials:true} )  
             .then(res=>setItem(res.data))
         } catch (error) {
          Swal.fire({
